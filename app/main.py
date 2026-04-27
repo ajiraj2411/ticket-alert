@@ -3,6 +3,11 @@ import os, requests
 
 app = FastAPI()
 
+from app.db import engine
+from app.models import Base
+
+Base.metadata.create_all(bind=engine)
+
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 def send_message(chat_id, text):
