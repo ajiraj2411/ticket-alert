@@ -15,3 +15,4 @@ class Alert(Base):
     chat_id = Column(String)
     movie = Column(String)
     city = Column(String)
+    status = Column(String, default="active")
