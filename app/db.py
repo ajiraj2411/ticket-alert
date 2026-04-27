@@ -5,7 +5,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 DATABASE_URL = os.getenv("DATABASE_URL_PUBLIC")
 
 if not DATABASE_URL:
-    raise Exception("DATABASE_URL_PUBLIC not set")
+    raise ValueError("DATABASE_URL_PUBLIC not set")
 
 if DATABASE_URL.startswith("postgres://"):
     DATABASE_URL = DATABASE_URL.replace("postgres://", "postgresql://", 1)

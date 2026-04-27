@@ -6,3 +6,6 @@ sqlalchemy
 celery
 redis
 python-dotenv
+tenacity
+pytest
+slowapi

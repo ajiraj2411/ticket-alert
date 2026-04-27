@@ -4,8 +4,8 @@ from app.bot import handle_message
 
 app = FastAPI()
 
-# create tables
 Base.metadata.create_all(bind=engine)
+
 
 @app.post("/webhook")
 async def webhook(req: Request):
@@ -15,3 +15,8 @@ async def webhook(req: Request):
         handle_message(data)
 
     return {"ok": True}
+
+
+@app.get("/health")
+def health():
+    return {"status": "ok"}
